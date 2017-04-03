@@ -43,8 +43,7 @@ public class BuildOperationScriptPlugin implements ScriptPlugin {
 
     @Override
     public void apply(final Object target) {
-        String operationDisplayNamePrefix = "Apply " + getSource().getDisplayName() + " to " + target;
-        buildOperationExecutor.run(operationDisplayNamePrefix, new Action<BuildOperationContext>() {
+        buildOperationExecutor.run("", new Action<BuildOperationContext>() {
             @Override
             public void execute(BuildOperationContext buildOperationContext) {
                 decorated.apply(target);
